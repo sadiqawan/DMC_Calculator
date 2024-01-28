@@ -141,7 +141,7 @@ class ResultScreen extends StatelessWidget {
                     'Grad:   $grd',
                     textAlign: TextAlign.center,
                     style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 40),
+                        fontWeight: FontWeight.bold, fontSize: 35),
                   )),
                 ),
               ],

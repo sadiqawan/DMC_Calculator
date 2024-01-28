@@ -162,20 +162,26 @@ class _HomeScreenState extends State<HomeScreen> {
                     setState(() {
                       obt = eng + urdu + math + sci + math + isl;
                       per = obt * 100 / 500;
-                      if (per <= 90) {
+                      if (per >= 90) {
                         grd = 'Your grade is A';
-                      } else if (per <= 80) {
+                      } else if (per >= 80) {
                         grd = 'Your grade is B';
-                      } else if (per <= 70) {
+                      } else if (per >= 70) {
                         grd = 'Your grade is C';
-                      } else if (per <= 60) {
+                      } else if (per >= 60) {
                         grd = 'Your grade is D';
                       } else {
                         grd = 'You have failed';
-                      };
 
-                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResultScreen(eng: eng, urd: urdu, math: math, sci: sci, isl: isl,  obt: obt, per: per, grd: grd)
-                     ));
+                      };
+                      if (formkey.currentState!.validate()){
+
+                        setState(() {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResultScreen(eng: eng, urd: urdu, math: math, sci: sci, isl: isl,  obt: obt, per: per, grd: grd)));
+
+                        });
+                      }
+
                     });
                    ;
                   },
